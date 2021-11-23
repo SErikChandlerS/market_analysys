@@ -1,0 +1,63 @@
+<head>
+
+</head>
+<body>
+    <form class="form-control" method="post" action="">
+        {% csrf_token %}
+        <div class="">
+            <h2 class="flavor-text mb10 header_2">Write down specialization name and choose region</h2>
+        </div>
+        <div>
+
+          <label for="inputQuery" class="label_main">Specialization </label>
+          <input name="query" list="query" {% if query %} value="{{ query}}" {% endif %}>
+          <datalist id="query">
+            {% for query in queries %}
+              <option value="{{ query }}">
+            {% endfor %}
+          </datalist>
+
+
+        </div>
+        <br/>
+        <label for="inputRegion" class="label_main">Region </label>
+        <select type="text" name="region" id="region" required="">
+          {% if region %}
+            <option value={{region}}></option>
+          {% endif %}
+          <option value="1">Russia</option>
+          <option value="2">Tatarstan</option>
+          <option value="3">Kazan</option>
+          <option value="4">Innopolis</option>
+        </select>
+        <br/>
+        <br/>
+        <input type="checkbox" id="cvs" name="cvs" value="cvs">
+        <label for="cvs"> CVs</label><br/>
+        <input type="checkbox" id="vacancies" name="vacancies" value="vacancies">
+        <label for="vacancies"> Vacancies</label><br><br>
+        <button name="choice" type="submit" value="retrieve">Retrieve from db</button>
+        <button name="choice" type="submit" value="update">Update db</button>
+        <br/>
+      {% csrf_token %}
+      {% if statistics %}
+        <div class="">
+          {% for statistic in statistics %}
+            {% for key, value in statistic.items %}
+              <p>
+                {{key}} - {{value}}
+              </p>
+            {% endfor %}
+          {% endfor %}
+          {% if cv_grapics %}
+            <img src="static/images/cv.png" alt="">
+          {% endif %}
+        </div>
+        <div class="">
+          <button name="show" type="submit" value="cvs">Show CVs</button>
+          <button name="show" type="submit" value="vacancies">Show vacancies</button>
+        </div>
+      {% endif %}
+
+    </form>
+</body>

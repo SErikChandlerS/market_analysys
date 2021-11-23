@@ -1,0 +1,23 @@
+<head>
+
+</head>
+<body>
+    <form class="form-control" method="post" action="">
+        {% csrf_token %}
+        <div class="">
+            <h2 class="flavor-text mb10 header_2">Write down vacancy name and choose region</h2>
+        </div>
+        <label for="inputVacancy" class="label_main">Vacancy name </label>
+        <input type="text" name="vacancy_name" id="vacancy_name" class="form-control" required="">
+        <br/>
+        <label for="inputRegion" class="label_main">Region </label>
+        <select type="text" name="region" id="region" class="form-control" required="">
+          <option value="1">Russia</option>
+          <option value="2">Tatarstan</option>
+          <option value="3">Kazan</option>
+          <option value="4">Innopolis</option>
+        </select>
+        <br/>
+        <input type="submit" value="Continue"/>
+    </form>
+</body>

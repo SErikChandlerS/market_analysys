@@ -1,0 +1,18 @@
+{
+                "hh_id": "int",
+                "name": "varchar",
+                "link": "varchar",
+                "salary_from": "int",
+                "salary_to": "int",
+                "company_name": "varchar",
+                "link_to_company": "varchar",
+                "responsibility": "varchar",
+                "requirement": "varchar",
+                "date": "timestamptz",
+                "required_experience": "varchar",
+                "employment_mode": "varchar",
+                "schedule": "varchar",
+                "key_skills": "varchar",
+                "city": "varchar",
+                "salary_in": "varchar"
+}
